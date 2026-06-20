@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8650255916304709"
+     crossorigin="anonymous"></script>
+    <meta name="google-site-verification" content="kpubNGgOA0TugJ-VTMIH2OQ9L2IOqlGr5PX2qyDxgdc" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Aesthetic Font Generator - Cool Styles for Discord, Bio & Gaming</title>
+    <meta name="description" content="Copy and paste premium aesthetic fonts for Discord bios, Instagram captions, TikTok nicknames, and PUBG styles. Fully multilingual custom font changer.">
+    <style>
+        :root {
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --bg-hover: #334155;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-purple: #a855f7;
+            --border: rgba(255, 255, 255, 0.08);
+            --shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+
+        [data-theme="light"] {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-hover: #f1f5f9;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --accent: #0284c7;
+            --accent-purple: #7e22ce;
+            --border: rgba(15, 23, 42, 0.08);
+            --shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(8px);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        select {
+            padding: 0.5rem 1rem;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            outline: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: 1px solid var(--border);
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main {
+            flex: 1;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .app-hero {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .app-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .app-hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .input-wrapper {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 1rem;
+            background-color: var(--bg-card);
+            color: var(--text-main);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 1.2rem;
+            resize: none;
+            outline: none;
+            box-shadow: var(--shadow);
+        }
+
+        textarea:focus {
+            border-color: var(--accent);
+        }
+
+        .filter-bar {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+            scrollbar-width: none;
+        }
+
+        .filter-bar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .filter-chip {
+            white-space: nowrap;
+            padding: 0.5rem 1rem;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .filter-chip.active {
+            background-color: var(--accent);
+            color: #0f172a;
+            border-color: var(--accent);
+        }
+
+        .results-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .font-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .font-card:hover {
+            background-color: var(--bg-hover);
+            border-color: var(--accent);
+        }
+
+        .font-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            max-width: 80%;
+        }
+
+        .font-name {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .font-output {
+            font-size: 1.4rem;
+            word-break: break-all;
+        }
+
+        .card-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .fav-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .fav-btn.active {
+            color: #eab308;
+        }
+
+        .copy-indicator {
+            font-size: 0.75rem;
+            font-weight: 700;
+            background-color: var(--border);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            color: var(--text-muted);
+        }
+
+        .ad-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--bg-card);
+            border: 1px dashed var(--border);
+            border-radius: 8px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 500;
+            overflow: hidden;
+        }
+
+        .ad-top { max-width: 728px; height: 90px; margin: 1rem auto 0; }
+        .ad-inline { height: 90px; margin: 0.75rem 0; }
+        .ad-bottom { position: fixed; bottom: 0; left: 0; width: 100%; height: 60px; z-index: 100; border-radius: 0; border-style: solid none none none; }
+
+        .seo-section {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .seo-section h2 {
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .seo-section p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem 6rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: auto;
+        }
+
+        .toast-container {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            pointer-events: none;
+        }
+
+        .toast {
+            background-color: var(--accent-purple);
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            animation: slideUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .ripple {
+            position: absolute;
+            background: rgba(56, 189, 248, 0.2);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: rippleEffect 0.4s linear;
+            pointer-events: none;
+        }
+
+        @keyframes rippleEffect {
+            to { transform: scale(4); opacity: 0; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <header>
+        <div class="header-container">
+            <div class="logo">AestheticFonts</div>
+            <div class="nav-controls">
+                <select id="langSelector" onchange="changeLanguage(this.value)">
+                    <!-- Generated via JS -->
+                </select>
+                <button class="toggle-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 2.293a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zm4.141 5.346a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0zM10 14a4 4 0 100-8 4 4 0 000 8zm0 2a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-4.293-1.293a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zm-3.448-5.346a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM4.293 4.293a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="ad-container ad-top">
+        <!-- Google AdSense Code Base Placeholder -->
+        Responsive Top Banner Ad Slot
+    </div>
+
+    <main>
+        <section class="app-hero">
+            <h1 id="ui-heading">Aesthetic Font Generator</h1>
+            <p id="ui-subheading">Create stylish text styles for your bios and profiles</p>
+        </section>
+
+        <section class="input-wrapper">
+            <textarea id="mainInput" placeholder="Type or paste your text here..." oninput="handleInput()"></textarea>
+        </section>
+
+        <section class="filter-bar" id="filterBar">
+            <div class="filter-chip active" data-filter="all" onclick="setFilter('all')" id="lbl-all">All Fonts</div>
+            <div class="filter-chip" data-filter="fav" onclick="setFilter('fav')" id="lbl-fav">★ Favorites</div>
+            <div class="filter-chip" data-filter="cursive" onclick="setFilter('cursive')">Cursive</div>
+            <div class="filter-chip" data-filter="bold" onclick="setFilter('bold')">Bold</div>
+            <div class="filter-chip" data-filter="gothic" onclick="setFilter('gothic')">Gothic</div>
+            <div class="filter-chip" data-filter="futuristic" onclick="setFilter('futuristic')">Futuristic</div>
+            <div class="filter-chip" data-filter="decorated" onclick="setFilter('decorated')">Decorated</div>
+        </section>
+
+        <section class="results-container" id="resultsGrid">
+            <!-- Dynamic Injection Rows -->
+        </section>
+
+        <article class="seo-section">
+            <h2 id="seo-title">About Aesthetic Font Changer</h2>
+            <p id="seo-p1">Welcome to the ultimate custom text matching engine optimizing conversions across platforms. Easily design profiles using unicode mappings engineered directly inside this structural webapp layer.</p>
+            <p id="seo-p2">Enhance profiles across modern platforms instantly. Use embedded characters safe for nicknames, profile layouts, gaming configurations, and unique visual identities globally.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AestheticFonts Application Core. Optimized for High-Speed Web Performance.</p>
+    </footer>
+
+    <div class="ad-container ad-bottom">
+        Sticky Adaptive Footer Banner Ad Slot
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script>
+        // High-fidelity Multilingual Dictionary Structure (30 Languages)
+        const dictionary = {
+            en: { heading: "Aesthetic Font Generator", subheading: "Create stylish text styles for your bios and profiles", placeholder: "Type or paste your text here...", all: "All Fonts", fav: "★ Favorites", copied: "Copied to clipboard!", title: "About Aesthetic Font Changer", p1: "Transform normal letters into customized typographic formats built perfectly for social profiles and messaging channels.", p2: "Our fast algorithmic tool outputs lightweight copyable designs safe for Discord tags, Instagram configurations, and globally recognizable gaming configurations." },
+            az: { heading: "Estetik Şrift Generatoru", subheading: "Sosial şəbəkə bio və profilləriniz üçün qəşəng şriftlər yaradın", placeholder: "Mətninizi bura daxil edin və ya yapışdırın...", all: "Bütün Şriftlər", fav: "★ Seçilmişlər", copied: "Mətn kopyalandı!", title: "Estetik Şrift Dəyişdirici Haqqında", p1: "Normal simvolları birbaşa profillərdə və ya statuslarda paylaşıla bilən unikal şrift vizuallarına çevirin.", p2: "Bu sürətli mexanizm vasitəsilə PUBG, Brawl Stars və ya Instagram profilləri üçün xüsusi görünüşlü adlar hazırlaya bilərsiniz." },
+            tr: { heading: "Estetik Şekilli Yazı Yazma", subheading: "Sosyal medya biyografileriniz için havalı fontlar oluşturun", placeholder: "Metninizi buraya yazın veya yapıştırın...", all: "Tüm Yazı Tipleri", fav: "★ Favoriler", copied: "Panoya kopyalandı!", title: "Şekilli Yazı Değiştirici Hakkında", p1: "Normal metinleri sosyal medya hesaplarınızda kolayca paylaşabileceğiniz unicode şekilli harflere dönüştürün.", p2: "Discord, Instagram veya oyun nickleri için tamamen uyumlu kopyalanabilir estetik harf kombinasyonları üretin." },
+            ru: { heading: "Генератор Эстетичных Шрифтов", subheading: "Создавайте красивые шрифты для описания профиля и био", placeholder: "Введите или вставьте текст здесь...", all: "Все шрифты", fav: "★ Избранное", copied: "Скопировано в буфер!", title: "О красивой смене шрифтов", p1: "Превращайте обычные буквы в уникальные каллиграфические стили для оформления ваших социальных сетей.", p2: "Быстрый копируемый вывод символов для никнеймов в играх, Discord, Instagram и других популярных экосистемах." },
+            es: { heading: "Generador de Fuentes Estéticas", subheading: "Crea estilos de texto elegantes para tus descripciones y bios", placeholder: "Escribe o pega tu texto aquí...", all: "Todas las fuentes", fav: "★ Favoritos", copied: "¡Copiado al portapapeles!", title: "Sobre el cambiador de fuentes", p1: "Transforma textos comunes en tipografías artísticas perfectamente legibles para perfiles digitales.", p2: "Generación de fuentes limpias y decoradas para copiar y pegar en Discord, Instagram y nombres de juegos." },
+            fr: { heading: "Générateur de Polices Esthétiques", subheading: "Créez des styles de texte élégants pour vos bios et profils", placeholder: "Tapez ou collez votre texte ici...", all: "Toutes les polices", fav: "★ Favoris", copied: "Copié dans le presse-papiers !", title: "À propos du changeur de texte", p1: "Convertissez des messages ordinaires en formats créatifs adaptés aux bios modernes.", p2: "Générez instantanément des variations d'écriture stylisées compatibles pour vos jeux vidéo et applications." },
+            de: { heading: "Ästhetischer Schriftarten Generator", subheading: "Erstellen Sie elegante Textstile für Bios und Profile", placeholder: "Geben Sie Ihren Text hier ein...", all: "Alle Schriften", fav: "★ Favoriten", copied: "In Zwischenablage kopiert!", title: "Über Schriftdesign online", p1: "Verwandeln Sie Standardbuchstaben in dekorierte Unicode-Zeichen für digitale Bios.", p2: "Kompatible Textgenerierung zum Kopieren für Profile auf Discord, Instagram und Gaming-Namen." },
+            it: { heading: "Generatore di Font Estetici", subheading: "Crea stili di testo eleganti per le tue bio e profili", placeholder: "Scrivi o incolla il tuo testo qui...", all: "Tutti i font", fav: "★ Preferiti", copied: "Copiato negli appunti!", title: "Info sul convertitore di caratteri", p1: "Modifica i caratteri standard in strutture decorative uniche ideali per catturare l'attenzione online.", p2: "Genera configurazioni testuali pronte da incollare in profili social e nickname di gioco." },
+            pt: { heading: "Gerador de Fontes Estéticas", subheading: "Crie estilos de texto elegantes para suas bios e perfis", placeholder: "Digite ou cole seu texto aqui...", all: "Todas as fontes", fav: "★ Favoritos", copied: "Copiado para a área de transferência!", title: "Sobre o modificador de letras", p1: "Altere o alfabeto comum para variações simbólicas elegantes aceitas em sistemas globais.", p2: "Estilos otimizados para colagem rápida em biografias e nomes de jogadores online." },
+            ar: { heading: "مولد الخطوط الزخرفية", subheading: "أنشئ نصوصاً وزخارف مميزة لملفاتك الشخصية", placeholder: "اكتب أو الصق النص هنا...", all: "جميع الخطوط", fav: "★ المفضلة", copied: "تم النسخ إلى الحافظة!", title: "حول مغير الخطوط الجمالي", p1: "حول الحروف العادية إلى أنماط يونيكود فريدة ومثالية لتزيين حساباتك الرقمية.", p2: "خطوط خفيفة الوزن جاهزة للنسخ المباشر متوافقة مع ديسكورد، إنستغرام، وأسماء الألعاب العالمية." },
+            hi: { heading: "फैंसी फ़ॉन्ट जेनरेटर", subheading: "अपने बायो और सोशल प्रोफाइल के लिए स्टाइलिश टेक्स्ट बनाएं", placeholder: "अपना टेक्स्ट यहां लिखें या पेस्ट करें...", all: "सभी फ़ॉन्ट्स", fav: "★ पसंदीदा", copied: "क्लिपबोर्ड पर कॉपी किया गया!", title: "स्टाइलिश टेक्स्ट कन्वर्टर", p1: "सामान्य शब्दों को सुंदर यूनिकोड अक्षरों में बदलें ताकि वे प्रोफाइल पर अलग दिख सकें।", p2: "गेमिंग निकनेम, डिस्कॉर्ड और इंस्टाग्राम के लिए तुरंत कॉपी करने योग्य स्टाइलिश फॉन्ट स्टाइल बनाएं।" },
+            ja: { heading: "可愛い文字フォント変換", subheading: "プロフィールやSNS向けのスタイリッシュな文字を作成", placeholder: "ここにテキストを入力または貼り付け...", all: "すべてのフォント", fav: "★ お気に入り", copied: "クリップボードにコピーしました！", title: "フォント変換ツールについて", p1: "通常の英数字を、SNSのプロフィール欄を彩る特殊Unicode文字に美しく変換します。", p2: "コピペするだけでDiscord、インスタ、各種オンラインゲーム名に即座に反映可能です。" },
+            zh: { heading: "花体字特殊字体生成器", subheading: "为您的社交媒体个人资料创建炫酷文本样式", placeholder: "在这里输入或 paste 您的文本...", all: "所有字体", fav: "★ 收藏夹", copied: "已复制到剪贴板！", title: "关于特殊符号字体转换", p1: "将普通的文本字母一键转义为华丽且具有设计感的特殊艺术字编码输出。", p2: "完美适配游戏网名、Discord 个性签名以及各类热门社媒简介排版需求。" },
+            ko: { heading: "예쁜 글씨체 폰트 변환기", subheading: "소셜 프로필과 바이오를 위한 스타일리시한 텍스트 생성", placeholder: "여기에 텍스트를 입력하거나 붙여넣으세요...", all: "모든 폰트", fav: "★ 즐겨찾기", copied: "클립보드에 복사되었습니다!", title: "텍스트 스타일 변경 도구", p1: "기본 알파벳 구조를 인스타그램이나 트위터 프로필에 적용 가능한 특수 유니코드 형태로 변형합니다.", p2: "원클릭 복사 시스템으로 게임 닉네임과 디스코드 상태 메시지를 독특하게 구성해보세요." },
+            pl: { heading: "Generator Estetycznych Czcionek", subheading: "Twórz stylowe napisy do swoich opisów i profili", placeholder: "Wpisz lub wklej tekst tutaj...", all: "Wszystkie czcionki", fav: "★ Ulubione", copied: "Skopiowano do schowka!", title: "O konwerterze czcionek", p1: "Zmieniaj standardowy tekst w dekoracyjne formy graficzne zdatne do natychmiastowej publikacji.", p2: "Lekkie i uniwersalne wzory znaków przygotowane pod profile Discord oraz pseudonimy w grach." },
+            nl: { heading: "Esthetische Lettertype Generator", subheading: "Maak stijlvolle tekst voor je bio en profielen", placeholder: "Typ of plak hier je tekst...", all: "Alle lettertypes", fav: "★ Favorieten", copied: "Kopieer naar klembord!", title: "Over de lettertype converter", p1: "Zet normale tekst om in artistieke Unicode-symbolen die perfect laden op online netwerken.", p2: "Genereer veilige, makkelijk kopieerbare ontwerpen voor Discord, Instagram en gaming-accounts." },
+            sv: { heading: "Estetiska Typsnitt Generator", subheading: "Skapa snygga textstilar för din bio och profil", placeholder: "Skriv eller klistra in din text här...", all: "Alla typsnitt", fav: "★ Favoriter", copied: "Kopierat till urklipp!", title: "Om typsnittskonverteraren", p1: "Omforma dina ord till unika symboliska alfabetiska mönster avsedda för digital design.", p2: "Snabb kopiering och inklistring för speltaggar, Discord-konton och Instagram-biografier." },
+            no: { heading: "Estetisk Skrifttype Generator", subheading: "Lag stilige tekststiler for bio og profiler", placeholder: "Skriv eller lim inn teksten din her...", all: "Alle skrifttyper", fav: "★ Favoritter", copied: "Kopiert til utklippstavle!", title: "Om tekstendring online", p1: "Konverter standard tekstbokstaver til kreative dekorative oppsett for dine sosiale medier.", p2: "Kopierbare kodesymboler tilpasset for direktemeldinger, Discord og spillernavn." },
+            fi: { heading: "Aesteettiset Kirjasintyypit", subheading: "Luo tyylikkäitä tekstityylejä kuvauksiin ja profiileihin", placeholder: "Kirjoita tai liitä tekstisi tähän...", all: "Kaikki fontit", fav: "★ Suosikit", copied: "Kopioitu leikepöydälle!", title: "Kirjasintyökalun esittely", p1: "Muunna tavalliset tekstit hienoiksi Unicode-merkeiksi parantaaksesi tilisi visuaalisuutta.", p2: "Kevyet, helposti kopioitavat tekstimuunnelmat peleihin sekä sosiaalisen median alustoille." },
+            da: { heading: "Æstetisk Skrifttype Generator", subheading: "Lav stilfulde tekstformater til din bio og profil", placeholder: "Skriv eller indsæt tekst her...", all: "Alle skrifttyper", fav: "★ Favoritter", copied: "Kopieret til udklipsholder!", title: "Om den smarte skriftændrer", p1: "Omdan almindelige bogstaver til unikke formaterede symbolstrukturer velegnet til weblayouts.", p2: "Generer hurtigt kopierbare designs til gamingprofiler, Instagram og chatplatforme." },
+            id: { heading: "Font Generator Estetik", subheading: "Buat gaya teks keren untuk bio dan profil Anda", placeholder: "Ketik atau tempel teks Anda di sini...", all: "Semua Font", fav: "★ Favorit", copied: "Berhasil disalin!", title: "Tentang Pengubah Huruf Estetik", p1: "Ubah tulisan biasa menjadi variasi simbol teks artistik yang menarik perhatian di media sosial.", p2: "Hasilkan gaya tulisan kustom yang mudah disalin untuk nama akun gim, Discord, dan Instagram." },
+            vi: { heading: "Trình Tạo Chữ Kiểu Đẹp", subheading: "Tạo các phong cách chữ nghệ thuật cho tiểu sử và hồ sơ", placeholder: "Nhập hoặc dán văn bản của bạn vào đây...", all: "Tất Cả Phông Chữ", fav: "★ Yêu Thích", copied: "Đã sao chép thành công!", title: "Về công cụ đổi phông chữ", p1: "Chuyển đổi các ký tự thông thường thành hệ thống biểu tượng Unicode thẩm mỹ bắt mắt.", p2: "Tạo các tên game cá tính, mô tả ấn tượng trên Discord và Instagram chỉ bằng một cú nhấp chuột." },
+            th: { heading: "เครื่องมือสร้างตัวอักษรแนวๆ", subheading: "สร้างฟอนต์สไตล์สวยๆ สำหรับใส่ไบโอและโปรไฟล์ของคุณ", placeholder: "พิมพ์หรือวางข้อความของคุณที่นี่...", all: "ฟอนต์ทั้งหมด", fav: "★ รายการโปรด", copied: "คัดลอกไปยังคลิปบอร์ดแล้ว!", title: "เกี่ยวกับเครื่องมือเปลี่ยนฟอนต์", p1: "เปลี่ยนตัวอักษรธรรมดาให้เป็นฟอนต์สัญลักษณ์ที่ออกแบบมาอย่างสวยงามเพื่อแสดงผลบนโลกออนไลน์", p2: "รหัสตัวอักษรคัดลอกง่ายสำหรับชื่อในเกม โปรไฟล์ดิสคอร์ด และแคปชั่นอินสตาแกรม" },
+            uk: { heading: "Генератор Красивих Шрифтів", subheading: "Створюйте стильні шрифти для біографії та профілів", placeholder: "Введіть або вставте текст...", all: "Усі шрифти", fav: "★ Вибране", copied: "Скопійовано!", title: "Про стилізацію тексту онлайн", p1: "Перетворюйте звичайні фрази на елегантні текстові коди для оформлення статусів та акаунтів.", p2: "Швидкі комбінації символів, адаптовані під Discord, описи профілів та ігрові псевдоніми." },
+            el: { heading: "Γεννήτρια Αισθητικών Γραμματοσειρών", subheading: "Δημιουργήστε κομψά στυλ κειμένου για τα προφίλ σας", placeholder: "Πληκτρολογήστε ή επικολλήστε το κείμενο εδώ...", all: "Όλες οι γραμματοσειρές", fav: "★ Αγαπημένα", copied: "Αντιγράφηκε στο πρόχειρο!", title: "Σχετικά με την αλλαγή γραμματοσειράς", p1: "Μετατρέψτε τα απλά γράμματα σε καλλιτεχνικές δομές Unicode έτοιμες για χρήση στα κοινωνικά δίκτυα.", p2: "Δημιουργήστε εύκολα μοναδικά ονόματα για παιχνίδια, λεζάντες στο Instagram και το Discord." },
+            he: { heading: "מחולל גופנים מעוצבים", subheading: "צור סגנונות טקסט ייחודיים לפרופילים ולרשתות החברתיות", placeholder: "הקלד או הדבק את הטקסט כאן...", all: "כל הגופנים", fav: "★ מועדפים", copied: "הועתק ללוח!", title: "אודות משנה הטקסט הדיגיטלי", p1: "הפוך אותיות סטנדרטיות לתצורות עיצוב מבוססות יוניקוד המתאימות באופן מושלם לרשת.", p2: "צור שמות מעוצבים וכינויים למשחקים, דיסקורד ואינסטגרם הניתנים להעתקה מהירה." },
+            ro: { heading: "Generator de Fonturi Estetice", subheading: "Creează stiluri de text elegante pentru bio și profiluri", placeholder: "Scrie sau inserează textul aici...", all: "Toate fonturile", fav: "★ Favorite", copied: "Copiat în clipboard!", title: "Despre convertorul de caractere", p1: "Schimbă textele uzuale în alfabete decorative spectaculoase acceptate nativ pe platformele online.", p2: "Formate curate ideale pentru copiere rapidă în profile de Discord, Instagram și nume de jocuri." },
+            cs: { heading: "Generátor Estetických Písem", subheading: "Vytvořte stylové texty pro své biografie a profily", placeholder: "Napište nebo vložte text sem...", all: "Všechna písma", fav: "★ Oblíbené", copied: "Zkopírováno do schránky!", title: "O online měniči písma", p1: "Přeměňte běžná písmena do ozdobných Unicode struktur vytvořených pro oživení webových profilů.", p2: "Vysoce kompatibilní styly určené ke snadnému vložení do herních nicků, Instagramu či Discordu." },
+            hu: { heading: "Esztétikus Betűtípus Generátor", subheading: "Készíts stílusos szövegeket a biódhoz és profilodhoz", placeholder: "Írd vagy másold be a szöveget ide...", all: "Összes betűtípus", fav: "★ Kedvencek", copied: "Másolva a vágólapra!", title: "A betűstílus váltóról", p1: "Alakítsd át az unalmas karaktereket egyedi vizuális formákká, melyek kitűnnek a közösségi médiában.", p2: "Könnyen másolható, letisztult kódminták játékosnevekhez, Discord leírásokhoz és Instagram profilokhoz." },
+            bg: { heading: "Генератор на Естетични Шрифтове", subheading: "Създавайте стилни текстове за вашите описания и профили", placeholder: "Въведете или поставете текст тук...", all: "Всички шрифти", fav: "★ Любими", copied: "Копирано в клипборда!", title: "Относно красивата промяна на текст", p1: "Преобразувайте обикновените текстови формати в красиви символни структури за дигитална идентичност.", p2: "Лесни за копиране конфигурации, напълно съвместими с гейминг никнеймове, Discord и Instagram." }
+        };
+
+        // Alphabet Substitution Alphabet Configurations
+        const alphabets = {
+            cursive: { 'a': '𝒶', 'b': '𝒷', 'c': '𝒸', 'd': '𝒹', 'e': '𝑒', 'f': '𝒻', 'g': '𝑔', 'h': '𝒽', 'i': '𝒾', 'j': '𝒿', 'k': '𝓀', 'l': '𝓁', 'm': '𝓂', 'n': '𝓃', 'o': '𝑜', 'p': '𝓅', 'q': '𝓆', 'r': '𝓇', 's': '𝓈', 't': '𝓉', 'u': '𝓊', 'v': '𝓋', 'w': '𝓌', 'x': '𝓍', 'y': '𝓎', 'z': '𝓏' },
+            bold: { 'a': '𝐚', 'b': '𝐛', 'c': '𝐜', 'd': '𝐝', 'e': '𝐞', 'f': '𝐟', 'g': '𝐠', 'h': '𝐡', 'i': '𝐢', 'j': '𝐣', 'k': '𝐤', 'l': '𝐥', 'm': '𝐦', 'n': '𝐧', 'o': '𝐨', 'p': '𝐩', 'q': '𝐪', 'r': '𝐫', 's': '𝐬', 't': '𝐭', 'u': '𝐮', 'v': '𝐯', 'w': '𝐰', 'x': '𝐱', 'y': '𝐲', 'z': '𝐳' },
+            gothic: { 'a': '𝔞', 'b': '𝔟', 'c': '制作', 'd': '𝔡', 'e': '𝔢', 'f': '𝔣', 'g': '𝔤', 'h': '𝔥', 'i': '𝔦', 'j': '𝔧', 'k': '𝔨', 'l': '𝔩', 'm': '𝔪', 'n': '𝔫', 'o': '𝔬', 'p': '𝔭', 'q': '𝔮', 'r': '𝔯', 's': '𝔰', 't': '𝔱', 'u': '𝔲', 'v': '𝔳', 'w': '𝔴', 'x': '𝔵', 'y': '𝔶', 'z': '𝔷' },
+            doubleStruck: { 'a': '𝕒', 'b': '𝕓', 'c': '𝕔', 'd': '𝕕', 'e': '𝕖', 'f': '𝕗', 'g': '𝕘', 'h': '𝕙', 'i': '𝕚', 'j': '𝕛', 'k': '𝕜', 'l': '𝕝', 'm': '𝕞', 'n': '𝕟', 'o': '𝕠', 'p': '𝕡', 'q': '𝕢', 'r': '𝕣', 's': '𝕤', 't': '𝕥', 'u': '𝕦', 'v': '𝕧', 'w': '𝕨', 'x': '𝕩', 'y': '𝕪', 'z': '𝕫' },
+            smallCaps: { 'a': 'ᴀ', 'b': 'ʙ', 'c': 'ᴄ', 'd': 'ᴅ', 'e': 'ᴇ', 'f': 'ғ', 'g': 'ɢ', 'h': 'ʜ', 'i': 'ɪ', 'j': 'ᴊ', 'k': 'ᴋ', 'l': 'ʟ', 'm': 'ᴍ', 'n': 'ɴ', 'o': 'ᴏ', 'p': 'ᴘ', 'q': 'ǫ', 'r': 'ʀ', 's': 's', 't': 'ᴛ', 'u': 'ᴜ', 'v': 'ᴠ', 'w': 'ᴡ', 'x': 'x', 'y': 'ʏ', 'z': 'ᴢ' },
+            bubbles: { 'a': 'ⓐ', 'b': 'ⓑ', 'c': 'ⓒ', 'd': 'ⓓ', 'e': 'ⓔ', 'f': 'ⓕ', 'g': 'ⓖ', 'h': 'ⓗ', 'i': 'ⓘ', 'j': 'ⓙ', 'k': 'ⓚ', 'l': 'ⓛ', 'm': 'ⓜ', 'n': 'ⓝ', 'o': 'ⓞ', 'p': 'ⓟ', 'q': 'ⓠ', 'r': 'ⓡ', 's': 'ⓢ', 't': 'ⓣ', 'u': 'ⓤ', 'v': 'ⓥ', 'w': 'ⓦ', 'x': 'ⓧ', 'y': 'ⓨ', 'z': 'ⓩ' },
+            squares: { 'a': '🄰', 'b': '🄱', 'c': '🄲', 'd': '🄳', 'e': '🄴', 'f': '🄵', 'g': '🄶', 'h': '🄷', 'i': '🄸', 'j': '🄹', 'k': '🄺', 'l': '🄻', 'm': '🄼', 'n': '🄽', 'o': '🄾', 'p': '🄿', 'q': '🅀', 'r': '🅁', 's': '🅂', 't': '🅃', 'u': '🅄', 'v': '🅅', 'w': '🅆', 'x': '🅇', 'y': '🅈', 'z': '🅉' },
+            wide: { 'a': 'ａ', 'b': 'ｂ', 'c': 'ｃ', 'd': 'ｄ', 'e': 'ｅ', 'f': 'ｆ', 'g': 'ｇ', 'h': 'ｈ', 'i': 'ｉ', 'j': 'ｊ', 'k': 'ｋ', 'l': 'ｌ', 'm': 'ｍ', 'n': 'ｎ', 'o': 'ｏ', 'p': 'ｐ', 'q': 'ｑ', 'r': 'ｒ', 's': 'ｓ', 't': 'ｔ', 'u': 'ｕ', 'v': 'ｖ', 'w': 'ｗ', 'x': 'ｘ', 'y': 'ｙ', 'z': 'ｚ' }
+        };
+
+        const decorators = [
+            { id: "dec1", prefix: "✧･ﾟ: * ", suffix: " *:･ﾟ✧" },
+            { id: "dec2", prefix: "╰(⇀◤𖦹◥)╯ ", suffix: " ╰(⇀◤𖦹◥)╯" },
+            { id: "dec3", prefix: "彡 ", suffix: " 彡" },
+            { prefix: "꧁ ", suffix: " ꧂" },
+            { prefix: "★彡 ", suffix: " 彡★" },
+            { prefix: "☠️ ", suffix: " ☠️" },
+            { prefix: "☂️ ", suffix: " ☂️" },
+            { prefix: "⚡ ", suffix: " ⚡" },
+            { prefix: "⚙️ ", suffix: " ⚙️" },
+            { prefix: "🛸 ", suffix: " 🛸" }
+        ];
+
+        let currentLang = 'en';
+        let activeFilter = 'all';
+        let debounceTimer;
+        let favoriteFonts = JSON.parse(localStorage.getItem('aesthetic_favs')) || [];
+
+        // Application State Lifecycle Initialization
+        document.addEventListener("DOMContentLoaded", () => {
+            initLanguages();
+            detectBrowserLanguage();
+            renderFonts();
+        });
+
+        function initLanguages() {
+            const selector = document.getElementById("langSelector");
+            Object.keys(dictionary).forEach(lang => {
+                const opt = document.createElement("option");
+                opt.value = lang;
+                opt.innerText = lang.toUpperCase();
+                selector.appendChild(opt);
+            });
+        }
+
+        function detectBrowserLanguage() {
+            const navLang = navigator.language.split('-')[0];
+            if(dictionary[navLang]) {
+                currentLang = navLang;
+            }
+            document.getElementById("langSelector").value = currentLang;
+            localizeDOM();
+        }
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            localizeDOM();
+        }
+
+        function localizeDOM() {
+            const l = dictionary[currentLang];
+            document.getElementById("ui-heading").innerText = l.heading;
+            document.getElementById("ui-subheading").innerText = l.subheading;
+            document.getElementById("mainInput").placeholder = l.placeholder;
+            document.getElementById("lbl-all").innerText = l.all;
+            document.getElementById("lbl-fav").innerText = l.fav;
+            document.getElementById("seo-title").innerText = l.title;
+            document.getElementById("seo-p1").innerText = l.p1;
+            document.getElementById("seo-p2").innerText = l.p2;
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const current = body.getAttribute("data-theme");
+            body.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+        }
+
+        function handleInput() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                renderFonts();
+            }, 80); // Debounce configuration to guarantee peak frame interaction metrics
+        }
+
+        function setFilter(filterType) {
+            activeFilter = filterType;
+            document.querySelectorAll(".filter-chip").forEach(chip => {
+                chip.classList.remove("active");
+                if(chip.getAttribute("data-filter") === filterType) chip.classList.add("active");
+            });
+            renderFonts();
+        }
+
+        function transformText(text, alphabetMap) {
+            return text.split('').map(char => {
+                const lower = char.toLowerCase();
+                if(alphabetMap[lower]) {
+                    // Check casing variance integrity
+                    return char === char.toUpperCase() ? alphabetMap[lower].toUpperCase() : alphabetMap[lower];
+                }
+                return char;
+            }).join('');
+        }
+
+        function compileFontsList(rawInput) {
+            const sample = rawInput.trim() === "" ? "Aesthetic" : rawInput;
+            let outputCollection = [];
+
+            // Core Architectural Structural Maps Loop
+            Object.keys(alphabets).forEach(key => {
+                let category = "decorated";
+                if(key.includes("cursive")) category = "cursive";
+                if(key.includes("bold")) category = "bold";
+                if(key.includes("gothic")) category = "gothic";
+                if(key.includes("double") || key.includes("small") || key.includes("wide")) category = "futuristic";
+
+                outputCollection.push({
+                    id: `core_${key}`,
+                    name: key.replace(/([A-Z])/g, ' $1'),
+                    text: transformText(sample, alphabets[key]),
+                    tag: category
+                });
+            });
+
+            // Add simulated dynamic decorator layers
+            decorators.forEach((dec, index) => {
+                outputCollection.push({
+                    id: `dec_${index}`,
+                    name: `Decorated Style ${index + 1}`,
+                    text: `${dec.prefix}${transformText(sample, alphabets.bold)}${dec.suffix}`,
+                    tag: "decorated"
+                });
+            });
+
+            // Append specific dynamic custom arrays to extend variation depth seamlessly
+            outputCollection.push({
+                id: "slash_strike",
+                name: "Slash Strike Through",
+                text: sample.split('').map(c => c + '̷').join(''),
+                tag: "futuristic"
+            });
+
+            outputCollection.push({
+                id: "underline_double",
+                name: "Double Underline Accent",
+                text: sample.split('').map(c => c + '̳').join(''),
+                tag: "bold"
+            });
+
+            return outputCollection;
+        }
+
+        function renderFonts() {
+            const inputVal = document.getElementById("mainInput").value;
+            const grid = document.getElementById("resultsGrid");
+            grid.innerHTML = "";
+
+            const masterList = compileFontsList(inputVal);
+            let displayCount = 0;
+
+            masterList.forEach((item) => {
+                const isFav = favoriteFonts.includes(item.id);
+
+                // Evaluation Filtering Layer Rules
+                if(activeFilter !== "all") {
+                    if(activeFilter === "fav" && !isFav) return;
+                    if(activeFilter !== "fav" && item.tag !== activeFilter) return;
+                }
+
+                displayCount++;
+
+                // Seamlessly Inject Inline Ads safely every 8 structured rows to maximize CPM metrics
+                if(displayCount > 0 && displayCount % 8 === 0) {
+                    const adRow = document.createElement("div");
+                    adRow.className = "ad-container ad-inline";
+                    adRow.innerText = "In-Feed Contextual Native Ad Unit Slot";
+                    grid.appendChild(adRow);
+                }
+
+                const card = document.createElement("div");
+                card.className = "font-card";
+                card.setAttribute("onclick", `copyFont(this, \`${item.text.replace(/`/g, '\\`').replace(/\$/g, '\\$')}\`)`);
+
+                const meta = document.createElement("div");
+                meta.className = "font-meta";
+                
+                const nameSpan = document.createElement("span");
+                nameSpan.className = "font-name";
+                nameSpan.innerText = item.name;
+
+                const outputSpan = document.createElement("span");
+                outputSpan.className = "font-output";
+                outputSpan.innerText = item.text;
+
+                meta.appendChild(nameSpan);
+                meta.appendChild(outputSpan);
+
+                const actions = document.createElement("div");
+                actions.className = "card-actions";
+
+                const indicator = document.createElement("span");
+                indicator.className = "copy-indicator";
+                indicator.innerText = "COPY";
+
+                const favBtn = document.createElement("button");
+                favBtn.className = `fav-btn ${isFav ? 'active' : ''}`;
+                favBtn.innerHTML = isFav ? "★" : "☆";
+                favBtn.setAttribute("aria-label", "Favorite Button");
+                favBtn.setAttribute("onclick", `toggleFav(event, '${item.id}')`);
+
+                actions.appendChild(indicator);
+                actions.appendChild(favBtn);
+
+                card.appendChild(meta);
+                card.appendChild(actions);
+                grid.appendChild(card);
+            });
+        }
+
+        function toggleFav(event, id) {
+            event.stopPropagation(); // Shield root card copy activation metrics
+            if(favoriteFonts.includes(id)) {
+                favoriteFonts = favoriteFonts.filter(f => f !== id);
+            } else {
+                favoriteFonts.push(id);
+            }
+            localStorage.setItem('aesthetic_favs', JSON.stringify(favoriteFonts));
+            renderFonts();
+        }
+
+        function copyFont(element, text) {
+            // High-fidelity programmatic Clipboard ingestion matrix
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text);
+            } else {
+                // Fallback architecture configuration metrics
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed"; 
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+            }
+
+            // High-Performance Visual Event Ripple System integration
+            const ripple = document.createElement("span");
+            ripple.className = "ripple";
+            element.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 400);
+
+            // Trigger structural non-blocking toast notifications
+            showToast(dictionary[currentLang].copied);
+        }
+
+        function showToast(message) {
+            const container = document.getElementById("toastContainer");
+            const toast = document.createElement("div");
+            toast.className = "toast";
+            toast.innerText = message;
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.opacity = "0";
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
